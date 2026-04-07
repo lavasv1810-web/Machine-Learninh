@@ -1,12 +1,12 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 import json
 from simulator import simulate_attack_sequence
 from agent_graph import deceptor_graph
-from dotenv import load_dotenv
-
-load_dotenv()
 
 app = FastAPI(title="DECEPTOR Multi-Agent API")
 

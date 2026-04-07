@@ -5,6 +5,9 @@ import operator
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, START, END
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], operator.add]
@@ -14,7 +17,7 @@ class AgentState(TypedDict):
 
 # Note: The GROQ_API_KEY must be in the environment to instantiate this
 try:
-    llm = ChatGroq(model="llama3-8b-8192")
+    llm = ChatGroq(model="llama-3.3-70b-versatile")
 except Exception as e:
     # Fallback to dummy for hackathon if no key is provided immediately
     class DummyLLM:
