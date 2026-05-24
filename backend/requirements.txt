@@ -5,3 +5,4 @@ langchain-groq
 pydantic
 websockets
 python-dotenv
+scikit-learn
